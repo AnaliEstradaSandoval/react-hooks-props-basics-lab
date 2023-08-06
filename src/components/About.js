@@ -2,17 +2,13 @@ import React from "react";
 import Links from "./Links";
 import user from "../data/user";
 
-function About(props) {
-const isBio = props.bio
-console.log(isBio)
-
+function About({ bio, links }) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>{isBio ? isBio : null}</p>
+      {bio && bio.length > 1 ? <p>{bio}</p> : null}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      <Links github={user.links.github} linkedin={user.links.linkedin}
-      />
+      <Links github={links.github} linkedin={links.linkedin}/>
     </div>
   )
 }
